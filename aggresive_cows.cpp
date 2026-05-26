@@ -22,16 +22,8 @@ bool isValid(vector<int> stalls, int k, int mid){
 int aggressiveCows(vector<int>& stalls, int k){
     sort(stalls.begin() , stalls.end());
 
-    int mini = INT_MAX;
-    int maxi = INT_MIN;
-
-    for(int val:stalls){
-        mini = min(mini,val);
-        maxi = max(maxi,val);
-    }
-
     int st = 1;
-    int end = maxi-mini;
+    int end = stalls[stalls.size()-1] - stalls[0];
     int ans = -1;
 
     while(st<=end){
